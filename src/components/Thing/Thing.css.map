@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACL,OAAO,EAAE,KAAK;CACf",
+    "sources": [
+        "Thing.scss"
+    ],
+    "names": [],
+    "file": "Thing.css"
+}
