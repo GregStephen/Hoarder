@@ -10,7 +10,7 @@ import Auth from '../components/Auth/Auth';
 import NewStuff from '../components/NewStuff/NewStuff';
 import MyStuff from '../components/MyStuff/MyStuff';
 import Edit from '../components/Edit/Edit';
-// import SingleStuff from '../components/SingleStuff/SingleStuff';
+import SingleStuff from '../components/SingleStuff/SingleStuff';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 
 import './App.scss';
@@ -61,13 +61,13 @@ class App extends React.Component {
           <React.Fragment>
             <MyNavbar authed={authed} />
             <div className="container">
-              <div className="row">
+              <div className="row justify-content-center">
                 <Switch>
                   <PublicRoute path='/auth' component={Auth} authed={authed}/>
                   <PrivateRoute path='/home' component={Home} authed={authed}/>
                   <PrivateRoute path='/new' component={NewStuff} authed={authed}/>
                   <PrivateRoute path='/stuff' component={MyStuff} authed={authed}/>
-                  {/* <PrivateRoute path='/stuff/:id' component={SingleStuff} authed={authed}/> */}
+                  <PrivateRoute path='/thing/:id' component={SingleStuff} authed={authed}/>
                   <PrivateRoute path='/edit/:id' component={Edit} authed={authed}/>
                   <Redirect from='*' to="/auth" />
                 </Switch>

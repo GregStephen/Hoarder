@@ -19,12 +19,18 @@ const getStuff = () => new Promise((resolve, reject) => {
 const getSingleThing = thingId => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/items/${thingId}.json`)
     .then((res) => {
-      console.error(res.data);
       resolve(res.data);
     })
     .catch(err => reject(err));
 });
 
+const addThingToDatabase = thingObj => axios.post(`${baseUrl}/items.json`, thingObj);
+
 const deleteThisThingFromDataBase = thingId => axios.delete(`${baseUrl}/items/${thingId}.json`);
 
-export default { getStuff, getSingleThing, deleteThisThingFromDataBase };
+export default {
+  getStuff,
+  getSingleThing,
+  deleteThisThingFromDataBase,
+  addThingToDatabase,
+};
