@@ -28,9 +28,12 @@ const addThingToDatabase = thingObj => axios.post(`${baseUrl}/items.json`, thing
 
 const deleteThisThingFromDataBase = thingId => axios.delete(`${baseUrl}/items/${thingId}.json`);
 
+const editThingOnDatabase = (thingId, thingObj) => axios.put(`${baseUrl}/items/${thingId}.json`, thingObj);
+
 export default {
   getStuff,
   getSingleThing,
   deleteThisThingFromDataBase,
   addThingToDatabase,
+  editThingOnDatabase,
 };
